@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/parent_layout">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="5dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="70dp"
+                android:layout_height="90dp"
+                android:padding="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:layout_toRightOf="@id/imageView"
+                android:text="Movie Name"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewTitle"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/imageView"
+                android:text="Duration"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                app:layout_constraintBottom_toTopOf="@+id/textViewScreen"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+            <TextView
+                android:id="@+id/textViewScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textViewDuration"
+                android:layout_below="@+id/textViewDuration"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                android:text="Select Screen:"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView" />
+
+            <Button
+                android:id="@+id/btnScreen1"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+
+                android:layout_alignBottom="@+id/textViewScreen"
+                android:layout_marginEnd="8dp"
+                android:layout_toEndOf="@+id/textViewScreen"
+                android:text="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnScreen2"
+                app:layout_constraintStart_toEndOf="@+id/textViewScreen" />
+
+            <Button
+                android:id="@+id/btnScreen2"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+
+                android:layout_alignBaseline="@+id/btnScreen1"
+                android:layout_alignBottom="@+id/btnScreen1"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/btnScreen1"
+                android:text="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnScreen1" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
